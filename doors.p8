@@ -26,7 +26,13 @@ function draw_door()
 	end
 end
 
+--room two
+
 --functions
+
+--change sprite based
+--on facing direction
+
 function changeavatar(pos1, pos2)
 	if avatar != pos1 then
 	 avatar = pos1
@@ -34,6 +40,8 @@ function changeavatar(pos1, pos2)
 	 avatar = pos2
 	end
 end
+
+--move avatar sprite
 
 function moveavatar()
 	if room == 1 then
@@ -56,8 +64,26 @@ function moveavatar()
  end
 end
 
+--clear room
+--reset variables to default
+
+function next_room()
+ 	
+ ax = 60
+ ay = 60
+ door_loc = {}
+ door = false
+ avatar = 001
+ priamry_text = false
+ secondary_text = false
+ 
+end
+
 function _update()
 	moveavatar()
+	if ax == door_loc[0] and ay == door_loc[1] then
+	 next_room()
+	end
 	if room == 1 then
 	 if t() > 10 and t() < 20 then
 	 	primary_text = true
